@@ -31,7 +31,10 @@ export function Login() {
           value={loginUsername}
           onChange={(e) => setLoginUsername(e.target.value)}
         />
-        <button disabled={auth.status === LoginStatus.LOGIN_PENDING}>
+        <button
+          type="submit"
+          disabled={auth.status === LoginStatus.LOGIN_PENDING}
+        >
           Login
         </button>
       </form>

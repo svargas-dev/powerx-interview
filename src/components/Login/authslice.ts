@@ -34,7 +34,7 @@ export const login = createAsyncThunk(
   "auth/login",
   async ({ username }: { username: string }) => {
     const response = await fetch(
-      "https://60b793ec17d1dc0017b8a6bc.mockapi.io/users"
+      "https://62e845a493938a545be39903.mockapi.io/users"
     );
     const json = await response.json();
 
@@ -52,7 +52,7 @@ export const login = createAsyncThunk(
 
     // user does not already exist; create a new one.
     const registration = await fetch(
-      "https://60b793ec17d1dc0017b8a6bc.mockapi.io/users",
+      "https://62e845a493938a545be39903.mockapi.io/users",
       {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -61,6 +61,7 @@ export const login = createAsyncThunk(
         }),
       }
     );
+
     return registration.json();
   }
 );
