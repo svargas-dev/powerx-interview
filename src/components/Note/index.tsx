@@ -3,12 +3,10 @@ import { useAppSelector } from "../../app/hooks";
 import { selectAuth, LoginStatus } from "../Login/authslice";
 import { submitNote, NoteStatus } from "../../api/note";
 import styles from "./Note.module.css";
-import { useCachedUser } from "../../hooks";
 
 export function Note() {
   const auth = useAppSelector(selectAuth);
   const [editNote, setEditNote] = useState<boolean | null>(null);
-  const cachedUser = useCachedUser();
 
   if (auth.status !== LoginStatus.LOGGED_IN) {
     return null;
