@@ -15,29 +15,29 @@ export function Login() {
         <button onClick={() => dispatch(logout())}>Logout</button>
       </div>
     );
-  } else {
-    return (
-      <form
-        className={styles.container}
-        onSubmit={(e) => {
-          e.preventDefault();
-          dispatch(login({ username: loginUsername }));
-        }}
-      >
-        <h3>Please log in to access this resource.</h3>
-        <input
-          type="text"
-          placeholder="Username"
-          value={loginUsername}
-          onChange={(e) => setLoginUsername(e.target.value)}
-        />
-        <button
-          type="submit"
-          disabled={auth.status === LoginStatus.LOGIN_PENDING}
-        >
-          Login
-        </button>
-      </form>
-    );
   }
+
+  return (
+    <form
+      className={styles.container}
+      onSubmit={(e) => {
+        e.preventDefault();
+        dispatch(login({ username: loginUsername }));
+      }}
+    >
+      <h3>Please log in to access this resource.</h3>
+      <input
+        type="text"
+        placeholder="Username"
+        value={loginUsername}
+        onChange={(e) => setLoginUsername(e.target.value)}
+      />
+      <button
+        type="submit"
+        disabled={auth.status === LoginStatus.LOGIN_PENDING}
+      >
+        Login
+      </button>
+    </form>
+  );
 }

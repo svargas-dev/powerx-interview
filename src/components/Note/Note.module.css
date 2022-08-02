@@ -1,0 +1,46 @@
+.container {
+  margin: 3em auto;
+  max-width: 30em;
+}
+
+.note {
+  margin-block-end: 2em;
+  white-space: pre-wrap;
+}
+
+.noteForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.noteForm textarea {
+  margin-block-end: 1em;
+  padding-block: 1em;
+  padding-inline: 1.5em;
+}
+
+.noteButton {
+  border: none;
+  background-color: rgb(25,35,25);
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  font-size: 1.25em;
+  transition: background-color 450ms opacity 300ms;
+}
+
+.noteButton:hover {
+  background-color: rgb(0,10,0);
+  cursor: pointer;
+}
+
+.noteButton[disabled] {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.ariaLive {
+  padding-block-start: 1.5em;
+  color: darkred;
+}
+
