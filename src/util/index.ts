@@ -1,0 +1,1 @@
+export { clearLocalStorageItem } from "./clearLocalStorageItem";

@@ -48,6 +48,7 @@ export const login = createAsyncThunk(
 
     const user = json.find((user) => "name" in user && user.name === username);
 
+    if (localStorage) localStorage.setItem("user", JSON.stringify(user));
     if (user) return user;
 
     // user does not already exist; create a new one.
@@ -62,7 +63,13 @@ export const login = createAsyncThunk(
       }
     );
 
-    return registration.json();
+    const registeredUser = await registration.json();
+    // strip api generated note from the user object
+    const registeredUserWithoutNote = { ...registeredUser, note: "" };
+
+    if (localStorage)
+      localStorage.setItem("user", JSON.stringify(registeredUserWithoutNote));
+    return registeredUserWithoutNote;
   }
 );
 

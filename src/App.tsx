@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "./logo.gif";
 import { Note } from "./components/Note";
 import "./App.css";
