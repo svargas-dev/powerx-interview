@@ -7,3 +7,9 @@
   pointer-events: none;
   margin: 50px;
 }
+
+button[disabled] {
+  transition: opacity 300ms;
+  opacity: 0.5;
+  cursor: wait !important;
+}
